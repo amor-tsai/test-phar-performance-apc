@@ -27,18 +27,18 @@ $app->get('/', function () use ($app) {
     $app->render('index.html');
 });
 
-$app->get('/phpinfo', function () use ($app) {
-    phpinfo();
-});
-
-$app->get('/show-apc', function () use ($app) {
-    echo '<pre>';
-    print_r(apc_cache_info());
-});
-
-$app->get('/clear-apc', function () use ($app) {
-    apc_clear_cache();
-});
+// $app->get('/phpinfo', function () use ($app) {
+//     phpinfo();
+// });
+// 
+// $app->get('/show-apc', function () use ($app) {
+//     echo '<pre>';
+//     print_r(apc_cache_info());
+// });
+// 
+// $app->get('/clear-apc', function () use ($app) {
+//     apc_clear_cache();
+// });
 
 // Run app
 $app->run();

@@ -1,8 +1,10 @@
 <?php
+
+require '../vendor/autoload.php';
+// require '../vendor/Zend_Db-2.1.0beta1.phar';
+
 // have to change the include_path
 set_include_path('.:' . realpath(__DIR__ . '/../vendor'));
-require '../vendor/autoload.php';
-
 // then require this file relative to include_path
 require 'Zend_Db-2.1.0beta1.phar';
 
