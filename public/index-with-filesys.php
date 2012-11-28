@@ -1,5 +1,6 @@
 <?php
 require '../vendor/autoload.php';
+require __DIR__ . '/../vendor/Zend_Db-2.1.0beta1.autoload.php';
 
 // Prepare app
 $app = new \Slim\Slim(array(
@@ -24,21 +25,11 @@ $app->view(new \Slim\Extras\Views\Twig());
 
 // Define routes
 $app->get('/', function () use ($app) {
+    echo 'Interface loaded from file system: ';
+    var_dump(interface_exists('Zend\Db\Adapter\Platform\PlatformInterface', true));
     $app->render('index.html');
 });
 
-$app->get('/phpinfo', function () use ($app) {
-    phpinfo();
-});
-
-$app->get('/show-apc', function () use ($app) {
-    echo '<pre>';
-    print_r(apc_cache_info());
-});
-
-$app->get('/clear-apc', function () use ($app) {
-    apc_clear_cache();
-});
 
 // Run app
 $app->run();

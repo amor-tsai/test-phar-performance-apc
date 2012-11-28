@@ -128,6 +128,6 @@ spl_autoload_register(function ($class) {
         'Zend\Db\TableGateway\TableGatewayInterface' => 'library/Zend/Db/TableGateway/TableGatewayInterface.php'
     );
     if (isset($map[$class])) {
-        include __DIR__ . '/' . $map[$class];
+        include __DIR__ . '/Zend_Db-2.1.0beta1/' . $map[$class];
     }
 });
